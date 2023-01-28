@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-db
+  namespace: kubenews
+spec:
+  selector:
+    app: db
+  ports:
+  - name: postgre
+    port: 5432
+    protocol: TCP
+  type: ClusterIP
