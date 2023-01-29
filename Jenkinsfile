@@ -30,7 +30,7 @@ pipeline {
         steps {
             script {
                 withKubeConfig([credentialsId: 'do_kubeconfig']) {
-                    sh 'sed -i "s/{{TAG}}/$tag_version/g" .kubernetes/.'
+                    sh 'sed -i "s/{{TAG}}/$tag_version/g" .kubernetes/deployment-app.yaml'
                     sh 'kubectl apply -f ./kubernetes/'
                 }                
             }
