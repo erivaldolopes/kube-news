@@ -12,7 +12,7 @@ pipeline {
 
     }
 
-    stage('Push Docker image') {
+    stage('Push Docker Image') {
             steps {
                 script {
                     withDockerRegistry([credentialsId: 'registry_id', url: 'https://index.docker.io/v1/']) {
