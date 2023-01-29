@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry([credentialsId: 'registry_id', url: 'https://index.docker.io/v1/']) {
-                        //def image = docker.build("erivaldolopes/kube-news:v1")
+                        dockerapp.push()
                         dockerapp.push("latest")
                     }
                 }
