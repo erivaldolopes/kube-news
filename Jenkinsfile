@@ -16,7 +16,7 @@ pipeline {
         steps {
             script {
                 //docker.withRegistry('https://registry.docker.com', 'dockerhub')
-                withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.docker.com'])
+                docker.withDockerRegistry([credentialsId: 'dockerhub', url: 'https://registry.docker.com'])
                 dockerapp.push('latest')
                 dockerapp.push("${env.BUILD_ID}")
             }
