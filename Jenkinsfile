@@ -12,6 +12,17 @@ pipeline {
 
     }
 
+    stage('Build and push Docker image') {
+            steps {
+                script {
+                    withDockerRegistry([credentialsId: 'registry_id', url: 'https://index.docker.io/v1/']) {
+                        def image = docker.build("erivaldolopes/kube-news:v1")
+                        image.push()
+                    }
+                }
+            }
+    }
+
     stage ('Push Docker Image') {
         steps {
             script {
