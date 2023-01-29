@@ -26,7 +26,7 @@ pipeline {
         steps {
             script {
                 withKubeConfig([credentialsId: 'kubeconfig']) {
-                    sh 'kubectl apply -f ./kubernetes/.'
+                    sh 'kubectl apply -f ./kubernetes/'
                 }                
             }
         }
