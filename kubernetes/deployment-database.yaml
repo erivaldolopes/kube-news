@@ -4,7 +4,7 @@ metadata:
   name: kube-db
   namespace: kubenews
 spec:
-  replicas: 3
+  replicas: 20
   selector:
     matchLabels:
       app: db
