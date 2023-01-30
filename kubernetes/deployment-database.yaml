@@ -14,7 +14,7 @@ spec:
         app: db
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/port: "5432"
+        prometheus.io/port: "9090"
         prometheus.io/path: "/metrics"
     spec:
       containers:
